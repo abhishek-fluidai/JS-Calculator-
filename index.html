@@ -2,171 +2,174 @@
 <!DOCTYPE html>
 <html>
 <head>
-	 
-	<title>Calculator</title>
-	
-	<style type="text/css">
-	
-		html {
-  font-size: 62.5%;
-  box-sizing: border-box;
-    background-image: url(2.jpg);
-}
 
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
+    <title>Calculator</title>
 
+    <style type="text/css">
 
-.calculator {
+        html {
+            font-size: 62.5%;
+            box-sizing: border-box;
+            background-image: url(2.jpg);
+        }
 
-  border-radius: 15px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  background-color: #fff;
-  background-image: url(3.jpg);
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
 
 
-}
-.calculator-screen {
-  width: 100%;
-  font-size: 5rem;
-  height: 80px;
-  border: none;
-  background-color: #011f4b ;
-  color: #fff;
-  text-align: right;
-  padding-right: 20px;
-  padding-left: 10px;
-  border-radius: 15px 15px 0px 0px;
-}
-	
-		button {
-		  height: 60px;
-		  background-color: #fff;
-		  border-radius: 3px;
-		  border: 1px solid #c4c4c4;
-		 
-		  font-size: 2rem;
-		  color: #333;
-		  background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
-		  box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
-		  text-shadow: 0 1px rgba(255,255,255,.4);
-		}
+        .calculator {
 
-		button:hover {
-		  background-color: #eaeaea;
-		}
-
-		.calculator-keys {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-  padding: 20px;
-}
-.operator {
-  color: #337cac;
-}
-
-.all-clear {
-  background-color: #f0595f;
-  border-color: #b0353a;
-  color: #fff;
-}
-.clear {
-  background-color: #0e9aa7  ;
-  border-color: #3da4ab;
- color: #fff;
-}
-.clear:hover {
-  background-color: #3da4ab;
-}
+            border-radius: 15px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            background-color: #fff;
+            background-image: url(3.jpg);
 
 
-.all-clear:hover {
-  background-color: #f17377;
-}
+        }
+        .calculator-screen {
+            width: 100%;
+            font-size: 5rem;
+            height: 80px;
+            border: none;
+            background-color: #011f4b ;
+            color: #fff;
+            text-align: right;
+            padding-right: 20px;
+            padding-left: 10px;
+            border-radius: 15px 15px 0px 0px;
+        }
 
-.equal-sign {
-  background-color: #2e86c0;
-  border-color: #337cac;
-  color: #fff;
-  height: 100%;
-  grid-area: 3 / 4 / 6 ;
-}
+        button {
+            height: 60px;
+            background-color: #fff;
+            border-radius: 3px;
+            border: 1px solid #c4c4c4;
 
-.equal-sign:hover {
-  background-color: #4e9ed4;
-}
+            font-size: 2rem;
+            color: #333;
+            background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+            text-shadow: 0 1px rgba(255,255,255,.4);
+        }
+
+        button:hover {
+            background-color: #eaeaea;
+        }
+
+        .calculator-keys {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+            padding: 20px;
+        }
+        .operator {
+            color: #337cac;
+        }
+
+        .all-clear {
+            background-color: #f0595f;
+            border-color: #b0353a;
+            color: #fff;
+        }
+        .clear {
+            background-color: #0e9aa7  ;
+            border-color: #3da4ab;
+            color: #fff;
+        }
+        .clear:hover {
+            background-color: #3da4ab;
+        }
 
 
-	</style>
+        .all-clear:hover {
+            background-color: #f17377;
+        }
+
+        .equal-sign {
+            background-color: #2e86c0;
+            border-color: #337cac;
+            color: #fff;
+            height: 100%;
+            grid-area: 3 / 4 / 6 ;
+        }
+
+        .equal-sign:hover {
+            background-color: #4e9ed4;
+        }
+
+
+    </style>
 
 
 
 
 </head>
 <body>
-	
+
 <div class="calculator">
-	<form>
-  <input type="text" class="calculator-screen" value="0" name="entry" id="screen" disabled />
-    <div class="calculator-keys">
-    	 <button type="button" class="operator" value="+" onclick="form.entry.value += '+'" >+</button>
-    <button type="button" class="operator" value="-" onclick="form.entry.value += '-'">-</button>
-    <button type="button" class="operator" value="*" onclick="form.entry.value += '*'">&times;</button>
-    <button type="button" class="operator" value="/" onclick="form.entry.value += '/'" >&divide;
-    </button>
-     <button type="button" value="7" onclick="form.entry.value += '7'">7</button>
-    <button type="button" value="8" onclick="form.entry.value += '8'">8</button>
-    <button type="button" value="9" onclick="form.entry.value += '9'">9</button>
-     <button type="button"  value="clear" class="clear" onclick="back()">Clr</button>
+    <form>
+        <input type="text" class="calculator-screen" value="0" name="entry" id="screen" disabled />
+        <div class="calculator-keys">
+
+            <button type="button" value="9" onclick="form.entry.value += '9'">9</button>
+            <button type="button" value="8" onclick="form.entry.value += '8'">8</button>
+            <button type="button" value="7" onclick="form.entry.value += '7'">7</button>
+            <button type="button"  value="clear" class="clear" onclick="back()">Clr</button>
+
+            <button type="button" value="6" onclick="form.entry.value += '6'">6</button>
+            <button type="button" value="5" onclick="form.entry.value += '5'">5</button>
+            <button type="button" value="4" onclick="form.entry.value += '4'">4</button>
+            <button type="button" class="all-clear" value="all-clear" onclick="form.entry.value = '' ">AC</button>
 
 
-    <button type="button" value="4" onclick="form.entry.value += '4'">4</button>
-    <button type="button" value="5" onclick="form.entry.value += '5'">5</button>
-    <button type="button" value="6" onclick="form.entry.value += '6'">6</button>
+            <button type="button" value="3" onclick="form.entry.value += '3'">3</button>
+            <button type="button" value="2" onclick="form.entry.value += '2'">2</button>
+            <button type="button" value="1" onclick="form.entry.value += '1'">1</button>
 
 
-    <button type="button" value="1" onclick="form.entry.value += '1'">1</button>
-    <button type="button" value="2" onclick="form.entry.value += '2'">2</button>
-    <button type="button" value="3" onclick="form.entry.value += '3'">3</button>
 
 
-    <button type="button" value="0" onclick="form.entry.value += '0'">0</button>
-    <button type="button" class="decimal" value="." onclick="form.entry.value += '.'">.</button>
+            <button type="button" value="0" onclick="form.entry.value += '0'">0</button>
+            <button type="button" class="decimal" value="." onclick="form.entry.value += '.'">.</button>
+            <button type="button" class="operator" value="/" onclick="form.entry.value += '/'" >&divide;
+            </button>
 
-   
 
-    <button type="button" class="all-clear" value="all-clear" onclick="form.entry.value = '' ">AC</button>
 
-    <button type="button" class="equal-sign operator" value="=" onclick="pio()" >=</button>
 
-  </div>
-</form>
+            <button type="button" class="operator" value="+" onclick="form.entry.value += '+'" >+</button>
+            <button type="button" class="operator" value="-" onclick="form.entry.value += '-'">-</button>
+            <button type="button" class="operator" value="*" onclick="form.entry.value += '*'">&times;</button>
+
+            <button type="button" class="equal-sign operator" value="=" onclick="pio()" >=</button>
+
+        </div>
+    </form>
 </div> <!--Container ends -->
 <script type="text/javascript">
-	function pio() {
-		var a = document.getElementById('screen'). value;
-	
-if ( a !="" && a!= null ) {
-		document.getElementById('screen'). value = eval(document.getElementById('screen'). value)
-		
-} else if  (a =="" || a == null) {
-	alert("Number Enter Kar Be")
-}
+    function pio() {
+        var a = document.getElementById('screen'). value;
 
-}
+        if ( a !="" && a!= null ) {
+            document.getElementById('screen'). value = eval(document.getElementById('screen'). value)
 
-function back() {
-    var value = document.getElementById("screen").value;
-    document.getElementById("screen").value = value.substr(0, value.length - 1);
-}
+        } else if  (a =="" || a == null) {
+            alert("Please enter the number first")
+        }
+
+    }
+
+    function back() {
+        var value = document.getElementById("screen").value;
+        document.getElementById("screen").value = value.substr(0, value.length - 1);
+    }
 </script>
 
 
